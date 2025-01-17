@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+</head>
+
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+        font-family: 'Rubik', sans-serif;
+        text-decoration: none;
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem;
+    }
+    
+    :root{
+        --bg-color:#10101a;
+        --main-color:#66a09b;
+        --2nd-main-color:#ffffffcc;
+        --text-color:#fff;
+        --big-font:5rem;
+        --h2-font:1.9rem;
+        --p-font:1rem;
+    }
+    
+    body{
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    header{
+        position: fixed;
+        width:100%;
+        top:0;
+        right:0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--bg-color);
+        padding: 24px 14%;
+        transition: .3s ;
+    }
+    
+    .logo
+    {
+        color: var(--text-color);
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    
+    span{
+        color:var(--main-color)
+    }
+    
+    .navbar{
+        display: flex;
+    }
+    
+    .navbar a{
+        color: var(--text-color);
+        font-size: 1rem;
+        padding: 10px 20px;
+        font-weight: 500;
+    }
+    
+    .navbar a:hover{
+        background:var(--main-color);
+        transition: .3s;
+    }
+    
+    #menu-icon{
+        font-size: 28px;
+        z-index: 10001;
+        cursor: pointer;
+        display: none;
+    }
+    
+    section{
+        padding: 120px 14%;
+    }
+    
+    .home{
+        position: relative;
+        height: 100vh;
+        width:100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap:6rem;
+        align-items: center;
+    }
+    
+    .home-img{
+        max-width: 100%;
+        width: 600px;
+        height: auto;
+    }
+    
+    .home-text h5{
+        color:var(--text-color);
+        font-size: 25px;
+        font-weight: 500;
+        margin: 0 0 20px;
+    }
+    .home-text h1{
+        font-size: var(--big-font);
+        color: var(--text-color);
+        font-weight: 600;
+        line-height: 1;
+        margin: 0 0 20px;
+    }
+    
+    .home-text h6{
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+    
+    .home-text p{
+        max-width: 470px;
+        font-size: var(--p-font);
+        font-weight: 300;
+        line-height: 2rem;
+        margin-bottom: 1.5rem;
+        color:var(--2nd-main-color)
+    }
+    
+    .btn{
+        background: var(--main-color);
+        color: var(--text-color);
+        box-shadow: 4px 4px var(--text-color);
+        padding: 0 25px;
+        line-height: 42px;
+        display: inline-block;
+        border: 1px solid transparent;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        transition: ease all 0.35;
+    }
+    
+    .btn:hover{
+        background: var(--text-color);
+        color: var(--main-color);
+        box-shadow: 4px 4px var(--main-color);
+    }
+    
+    .about{
+        display: grid;
+        grid-template-columns: repeat(2,2fr);
+        grid-gap:5rem;
+        align-items: center;
+    }
+    
+    .about-img img{
+        max-width: 100%;
+        width: 580px;
+        height:auto ;
+    }
+    
+    .about-text h3{
+        color: var(--text-color);
+        font-size: 30px;
+        font-weight: 300;
+        letter-spacing: 6px;
+        margin: 0 0 30px;
+    }
+    
+    .about-text h2{
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        font-size: var(--h2-font);
+        line-height: 1.2;
+        max-width: 470px;
+        margin-bottom: 2rem;
+    }
+    
+    .about-text p{
+        max-width: 570px;
+        font-size:var(--p-font);
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        line-height: 1.8rem;
+        color: var(--2nd-main-color);
+    }
+    
+    .count{
+        margin-bottom: 2rem;
+    }
+    
+    .about-text .count a{
+        color: var(--2nd-main-color);
+        margin-right: 20px;
+        word-spacing: 5px;
+    }
+    .count span{
+        color:var(--text-color);
+        font-size: 2.7rem;
+        font-weight: 600;
+    }
+    
+    .main-btn .btn{
+        margin-right: 20px;
+    }
+    
+    .center{
+        text-align: center;
+    }
+    
+    .center h3{
+        color: var(--text-color);
+        font-size: 30px;
+        font-weight: 300;
+        letter-spacing: 6px;
+    }
+    
+    .service-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,auto));
+        grid-gap:2rem;
+        align-items: center;
+        margin-top: 4.4rem;
+    }
+    
+    .row{
+        background: #0b0b13;
+        /* padding: 60px 195px; */
+        padding: 60px 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .40s;
+    }
+    
+    .row i{
+        color: var(--main-color);
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    .row h3{
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: var(--text-color);
+    }
+    
+    .row p{
+        font-size: 18px;
+        color: var(--2nd-main-color);
+        line-height: 30px;
+    }
+    
+    .row:hover{
+        transform: translate(-15px);
+        box-shadow: 0px 15px 30px 0px rgb(0 0 0 /70%);
+    }
+    
+    .cta{
+        background: #0b0b13;
+        width: 100%;
+        padding: 150px 0;
+        text-align: center;
+        margin: 100px auto;
+    }
+    
+    .cta h4{
+        color: var(--text-color);
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+    
+    .cta h2{
+        color: var(--main-color);
+        font-size: 4rem;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+    
+    .resume-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(450px,auto));
+        grid-gap:3rem;
+        align-items: center;
+        margin-top: 4.4rem;
+    }
+    
+    .box{
+        background:#0b0b13;
+        padding: 40px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .40s;
+    }
+    
+    .box h6{
+        color: #3e4455;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .box h4{
+        color: var(--text-color);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 25px;
+        margin-bottom: 13px;
+    }
+    
+    .box p{
+        font-size: var(--p-font);
+        font-weight: 300;
+        margin-bottom: 1.2rem;
+        line-height: 1.8rem;
+        color: var(--2nd-main-color);
+    }
+    
+    .box h5{
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--2nd-main-color);
+    }
+    
+    .box:hover{
+        transform: translate(-15px);
+        box-shadow: 0px 15px 30px 0px rgb(0 0 0 /70%);
+    }
+    
+    .contact-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4.2rem;
+    }
+    
+    .contact-form form{
+        position: relative;
+        width: 550px;
+    }
+    
+    form input,form textarea{
+        width: 100%;
+        padding: 20px;
+        border: none;
+        outline: none;
+        background: #0b0b13;
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+        border: 5px;
+    }
+    
+    form input::placeholder,form textarea::placeholder{
+        color: var(--2nd-main-color);
+    }
+    
+    textarea{
+        resize: none;
+        height: 200px;
+    }
+    
+    form .send-btn{
+        background: var(--main-color);
+        color: var(--text-color);
+        box-shadow: 4px 4px var(--text-color);
+        padding: 0 25px;
+        line-height: 42px;
+        display: inline-block;
+        border: 1px solid transparent;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        transition: ease all 0.35s;
+        cursor: pointer;
+    }
+    
+    form .send-btn:hover{
+        background: var(--text-color);
+        color: var(--main-color);
+        box-shadow: 4px 4px var(--main-color);
+    }
+    
+    .copyright{
+        text-align: center;
+        padding:30px;
+        color: var(--2nd-main-color);
+        background: #0b0b13;
+        margin-top: 3rem;
+        line-height: 1.8rem;
+    }
+    
+    .copyright p{
+        display:flexbox;
+    }
+    
+    .copyright a i{
+        color: var(--2nd-main-color);
+        font-size: 2rem;
+    }
+    
+    
+    @media (max-width:1430px) {
+        header{
+            padding: 25px 3%;
+        }
+    
+        section{
+            padding: 50px 3%;
+        }
+        :root{
+            --big-font:5rem;
+            --h2-font:1.9rem;
+            --p-font:0.9rem;
+        }
+    }
+    
+    @media (max-width:1020px)
+    {
+        :root{
+            --big-font:5rem;
+            --h2-font:1.9rem;
+            --p-font:0.9rem;
+        }
+    
+        .home{
+            height: 70vh;
+        }
+    }
+    
+    @media (max-width:830px){
+        header{
+            padding: 18px 3%;
+        }
+    
+        #menu-icon{
+            display: block;
+        }
+    
+        .navbar{
+            position: absolute;
+            top: -500px;
+            left:0;
+            right:0;
+            display: flex;
+            flex-direction: column;
+            background:#0b0b13;
+            box-shadow: 0px 15px 30px 0px rgb(0 0 0 / 70%);
+            text-align: left;
+            transition: 0.2s ease;
+        }
+    
+        .navbar a{
+            display: block;
+            padding: 1rem;
+            border-left: 2px solid var(--main-color);
+            margin: 1rem;
+            display: block;
+        }
+    
+        .navbar.active{
+            top:100%
+        }
+    }
+    
+    @media (max-width:795px) {
+        .home{
+            grid-template-columns: 1fr;
+            grid-gap:2rem;
+            text-align: center;
+            margin-top: 80px;
+            height: 100vh;
+        }
+    
+        .home-text p{
+            max-width: 100%;
+        }
+    
+        .home-img img{
+            max-width: 100%;
+            width: 200px;
+            height: auto;
+        }
+    
+        .about{
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    
+        .about-text h2{
+            max-width: 100%;
+        }
+    
+        .about-text h2{
+            max-width: 100%;
+        }
+    
+        .about-text p{
+            max-width: 100%;
+        }
+    
+        .about-img{
+            order: 2;
+        }
+    }
+</style>
+<body>
+    <!-- header -->
+    <header>
+        <a href="#" class="logo">Portfo<span>lio</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul style="list-style-type: none"  class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Skills</a></li>
+            <!-- <li><a href="#media">Social Media</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+    </header>
+
+        <!-- start home -->
+        <section class="home" id="home">
+            <div class="home-text">
+                <h5>Hello, I am</h5>
+                <h1>Vineet kuamr</h1>
+                <h6>I'm Passionate Backend <span>Developer.</span></h6>
+                
+                     <a href="VINEET_RESUME (1).pdf" download class="btn">Download CV</a>
+            </div>
+
+            <div class="home-img">
+                <img src="photo.jpg" width="300px" height="300px">
+            </div>
+        </section>
+        
+
+        <!-- start about -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="photo2.jpg.jpg" width="300px" height="300px">
+            </div>
+
+            <div class="about-text">
+                <h3>ABOUT ME</h3>
+                    <p>Aspiring IT professional with a passion for applying technical knowledge and skills to solve real-world problem.
+                       Seeking opportunities to contribute innovative solutions and drive mutual growth with in an organization, while 
+                        continually expanding my expertise in information Technology.</p>
+
+                <div class="main-btn">
+                    <a href="#contact"  class="btn">Contact Me </a>
+                    <a href="#" class="btn">Portfolio</a>
+                </div>
+
+            </div>
+        </section>
+
+         <!-- start resume -->
+         <section class="resume" id="resume">
+            <div class="center">
+                <h3>Education</h3>
+            </div>
+            <div class="resume-content">
+                <div class="box">
+                    <h6>March 2017-2018</h6>
+                    <h4>10th</h4>
+                    <p>Percentage - <span>60.80% </span></p>
+                    <h5>Mini Rose Public High School Shahabad</h5>
+                </div>
+
+                <div class="box">
+                    <h6>June 2018-2020</h6>
+                    <h4>2nd PUC</h4>
+                    <p>Percentage - <span>60.00%</span></p>
+                    <h5>Kayaka Foundation Residential Pu College Kalaburagi</h5>
+                </div>
+
+                <div class="box">
+                    <h6>December 2020-2024</h6>
+                    <h4>BACHELORE OF TECHNOLOGY</h4>
+                    <p>SCORE - <span>8.69 CGPA</span></p>
+                    <h5>Appa Institute of Engineering and Technology Kalaburagi</h5>
+                </div>
+            </div>
+          </section>
+
+          <!-- start INTERNSHIP -->
+          <section class="resume" id="resume">
+            <div class="center">
+                <h3>INTERNSHIP</h3>
+            </div>
+            <div class="resume-content">
+                <div class="box">
+                    <h6>MARCH 2024 - MAY 2024</h6>
+                    <h4>KodNest</h4>
+                    <p><span>Java Full Stack Development</span></p>
+                    <p>KodNest Dream Factory<br>  
+                        • Completed an internship in Java Full Stack Development at KodNest
+                        which comprehensive learning and practical experience enriching
+                        my skills in Web application Development and java technologies<br>
+                        
+                       <h5>BENGALURU</h5>
+                </div>
+            </div>
+            </section>
+
+        <!-- projects completed -->
+        <section class="resume" id="projects">
+            <div class="center">
+                <h3>Projects</h3>
+            </div>
+            <div class="resume-content">
+                <div class="box">
+                    <h6>Final Year Project</h6>
+                    <h4> Plant Disease Detection </h4>
+                    <p>
+                        • Developed using Python, C++, and C on a Raspberry Pi platform for real-time plant disease detection.<br>
+                        • Uses OpenCV to analyze plant structure, spots, and NIR spectrum, along with Vector Images and Depth Maps for detailed visual data.<br>
+                        • Implements disease detection models using scikit-learn, TensorFlow, and PyTorch to classify plant health.<br>
+                    
+                    </p>
+                    <h6> Project</h6>
+                    <h4>User KodBook clone</h4>
+                    <p>
+                        • <b>Core Functionality:</b> Developed a User KodBook Application with secure user registration and login features to control access.<br>
+                        • <b>Tech Stack:</b> Built with Spring Boot and MySQL, utilizing Spring Data JPA for efficient and reliable database interactions.<br>
+                        • <b>Security Features:</b> Includes user validation, password and session management, and role-based access control to manage user permissions securely.<br>
+                        • <b>Future Enhancements:</b> Plans to add social media login and live feedback to get likes, comments etc, Buzzing on social media and user experience.<br>
+
+                    </p>
+                    </div>
+            </div>
+            </section>
+           
+            
+          <!-- start services -->
+          <section class="services" id="services">
+            <div class="center">
+                <!-- <h3>WHAT I DO</h3> -->
+                <h3>SKILLS </h3>
+            </div>
+
+            <div class="service-content">
+                <div class="row">
+                    <i class='bx bxl-java' ></i>
+                    <h3>CORE JAVA</h3>
+                    <p>JUST ANOTHER VIRTUAL ACCELERATOR</p>
+                </div>
+                
+                <div class="row">  
+                    <i class='bx bxl-spring-boot bx-flip-horizontal' style='color:rgba(33,226,104,0.2)'  ></i> 
+                    <i class='bx bxl-spring'></i> <!-- Optional: Spring Boot icon -->  
+                    <h3>SPRINGBOOT</h3>  
+                    <p>FRAMEWORK FOR BUILDING JAVA APPLICATIONS</p>  
+                </div>
+
+                <div class="row">  
+                    <img src="post.jpg" alt="Spring Boot Logo" style="width: 40px; height: 40px;">
+                    <i class='bx bxl-postman'></i> <!-- Use an icon for Postman; you might need to adjust the icon category. -->  
+                    <h3>POSTMAN</h3>  
+                    <p>API DEVELOPMENT & TESTING TOOL</p>  
+                </div>
+                 
+                
+                <div class="row">
+                    <i class='bx bx-server'></i>
+                    <h3>SCRIPTING LANGUAGE</h3>
+                    <p>CSS(Cascading Style Sheets) </p>
+                </div>
+
+                
+                <div class="row">
+                    <i class='bx bxl-html5' style="text-align:center;" ></i>
+                    <!-- <i class="bx bx-cast"></i> -->
+                    <h3>HTML</h3>
+                    <p>HYPER TEXT MARKUP LANGUAGE</p>
+                </div>
+
+                
+                <div class="row">
+                    <i class='bx bxl-postgresql'></i>
+                    <h3>MYSQL</h3>
+                    <p>RELATIONAL DATABASE MANAGEMENT SYSTEM.</p>
+                </div>
+
+
+                <div class="row">
+                    <i class='bx bxs-calculator'></i>
+                    <h3>PROBLEM SOLVING</h3>
+                    <p>FINDING A EFFECTIVE SOLUTION</p>
+                </div>
+
+                
+
+
+            </div>
+          </section>         
+
+        <!-- socila media handles -->
+        <!-- id="media" -->
+        <section class="contact" id="contact">
+            <div class="center">
+                <!-- <h3>WHAT I DO</h3> -->
+                <h3>SOCIAL MEDIA LINKS</h3>
+            </div>
+
+            <div class="service-content">
+
+                <div class="row">
+                    <i class='bx bxl-linkedin' ></i>
+                    <h3>LINKEDIN </h3>
+                    <!-- <p>HYPER TEXT MARKUP LANGUAGE</p> -->
+                    <a href="https://www.linkedin.com/in/vineet-kumar-541755271?" target="_blank">VISIT</a>
+                </div>
+
+                <div class="row">
+                    <i class='bx bxl-github' ></i>
+                    <h3>github </h3>
+                    <a href="https://github.com/Degalmadi" target="_blank">VISIT</a>
+                </div>
+
+                <div class="row">
+                    <i class='bx bxl-instagram'></i>
+                    <h3>INSTAGRAM </h3>
+                    <a href="https://www.instagram.com/vineet_degalmadi?igsh=MjF1MTZzdG02NDFz" target="_blank">VISIT</a>
+                </div>
+
+                <div class="row">
+                    <i class='bx bxl-youtube' ></i>
+                    <h3>YOUTUBE </h3>
+                    <a href="https://youtube.com/@vineetdegalmadi?si=Zwoyek_AWdI6GYfJ" target="_blank">VISIT</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- start contact -->
+        <section class="contact" id="contact">
+            <div class="center">
+                <h3>Contact ME</h3>
+            </div>
+
+            <div class="contact-form">
+                <form action="" method="POST">
+                    <input type="text" name="Name" id="" placeholder="Your Name" required>
+                    <input type="email" name="Email" id="" placeholder="Email Address" required>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Project Description" required></textarea>
+                    <input type="submit" name="" value="Send" class="send-btn">
+                </form>
+            </div>
+        </section>
+
+
+        <!-- start copyrigt-->
+        <div class="copyright">
+            <!-- <a href="mallikarjunj0015@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a> -->
+            <p>Copyright @ 2023, All Rights Reserved.</p>
+            <P>Privacy and  Terms of Use </P>
+            
+        </div>
+
+
+
+
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- link to js -->
+    <script type="text/javascript" src="script.js"></script>
+    
+</body>
+</html>
